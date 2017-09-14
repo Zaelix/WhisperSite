@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NewsPosts>
+	<NewsPost
+		Id="0">
+		<PostTitle>CLN Displays Surprising Initiative</PostTitle>
+		<Date>2.15.2073</Date>
+		<Content>Project Benefactor is a go! CLN has initiated a city-wide humanitarian effort.</Content> </NewsPost>
+	<NewsPost
+		Id="1">
+		<PostTitle>Taco Tuesday Happens Again</PostTitle>
+		<Date>2.17.2073</Date>
+		<Content>Everybody remembers how much they love tacos every tuesday! Delicious, nutritious, and downright divine.</Content> 
+		</NewsPost>
+	<NewsPost
+		Id="2">
+		<PostTitle>Mango Pies are Delicious</PostTitle>
+		<Date>2.26.2073</Date>
+		<Content>Mango pies are the best. They are pie, with mango. Both are good. Mango Mango Mango!</Content> 
+		</NewsPost>
+	<NewsPost
+		Id="3">
+		<PostTitle>Did the CDC Just Cure BitterScale?</PostTitle>
+		<Date>2.02.2073</Date>
+		<Content>In an international conference earlier this week, BitterScale taskforce researcher James Harrow reported success in treating the disease in laboratory conditions. He is said to have exclaimed that BitterScale 'is easily treated with the compound [we've] developed here at the CDC'. The results he has published this week paint a hopeful light, making a viable cure seem all the more likely to come sooner rather than later. Those of us stuck in the quarantine look forward to his next publication!</Content> 
+		</NewsPost>
+</NewsPosts>
