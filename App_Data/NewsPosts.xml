@@ -8,4 +8,12 @@
 		Title="Taco Tuesday Happens Again"
 		Date="2.17.2073"
 		Content="Everybody remembers how much they love tacos every tuesday! Delicious, nutritious, and downright divine." />
+	<NewsPost
+		Title="Mango Pies are Delicious"
+		Date="2.26.2073"
+		Content="Mango pies are the best. They are pie, with mango. Both are good. Mango Mango Mango!" />
+	<NewsPost
+		Title="Did the CDC Just Cure BitterScale?"
+		Date="2.02.2073"
+		Content="In an international conference earlier this week, BitterScale taskforce researcher James Harrow reported success in treating the disease in laboratory conditions. He is said to have exclaimed that BitterScale 'is easily treated with the compound [we've] developed here at the CDC'. The results he has published this week paint a hopeful light, making a viable cure seem all the more likely to come sooner rather than later. Those of us stuck in the quarantine look forward to his next publication!" />
 </NewsPosts>
