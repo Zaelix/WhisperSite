@@ -11,17 +11,4 @@ public partial class Hub : System.Web.UI.Page
     {
         
     }
-
-    protected void HubSearchBox_TextChanged(object sender, EventArgs e)
-    {
-        string search = HubSearchBox.Text;
-        if (search != string.Empty)
-        {
-            NewsPostsXML.XPath = "/NewsPosts/NewsPost[@*[contains(., '"+search+"')]]";
-        }
-        else
-        {
-            NewsPostsXML.XPath = "";
-        }
-    }
 }
