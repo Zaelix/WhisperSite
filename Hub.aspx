@@ -6,7 +6,7 @@
     <asp:Panel ID="Panel1" runat="server" Height="381px" style="margin-bottom: 0px">
         <asp:TextBox ID="HubSearchBox" runat="server" OnTextChanged="HubSearchBox_TextChanged"></asp:TextBox>
         <asp:XmlDataSource ID="NewsPostsXML" runat="server" DataFile="~/App_Data/NewsPosts.xml" XPath="/NewsPosts/NewsPost[@Date<=20730214]"></asp:XmlDataSource>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="NewsPostsXML" Height="249px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="NewsPostsXML" Height="249px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" >
                 </asp:BoundField>

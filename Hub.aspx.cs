@@ -10,7 +10,7 @@ public partial class Hub : System.Web.UI.Page
     protected int presentDate = 20730214;
     protected void Page_Load(object sender, EventArgs e)
     {
-        Panel1.Height = GridView1.Height;
+        Panel1.Height = (Unit)1000;
     }
 
     protected void HubSearchBox_TextChanged(object sender, EventArgs e)
@@ -24,11 +24,11 @@ public partial class Hub : System.Web.UI.Page
         {
             NewsPostsXML.XPath = "NewsPosts/NewsPost[@Date<=" + presentDate + "]";
         }
-        Panel1.Height = GridView1.Height;
+        Panel1.Height = (Unit)1000;
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        Panel1.Height = GridView1.Height;
+        Panel1.Height = (Unit)1000;
     }
 }
