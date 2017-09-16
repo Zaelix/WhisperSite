@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class Hub : System.Web.UI.Page
 {
+    protected int presentDate = 20730214;
     protected void Page_Load(object sender, EventArgs e)
     {
         Panel1.Height = GridView1.Height;
@@ -17,11 +18,11 @@ public partial class Hub : System.Web.UI.Page
         string search = HubSearchBox.Text;
         if (search != string.Empty)
         {
-            NewsPostsXML.XPath = "/NewsPosts/NewsPost[@Date<='20730214' and @*[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + search.ToLower() + "')]]";
+            NewsPostsXML.XPath = "NewsPosts/NewsPost[@Date<="+ presentDate + " and @*[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + search.ToLower() + "')]]";
         }
         else
         {
-            NewsPostsXML.XPath = "/NewsPosts/NewsPost[@Date<='20730214']";
+            NewsPostsXML.XPath = "NewsPosts/NewsPost[@Date<=" + presentDate + "]";
         }
         Panel1.Height = GridView1.Height;
     }
