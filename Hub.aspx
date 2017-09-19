@@ -123,7 +123,6 @@
                 </asp:DropDownList>
                 <asp:Button ID="ResetEndButton" runat="server" Height="20px" OnClick="ResetEndButton_Click" Text="Reset" UseSubmitBehavior="False" />
             </asp:Panel>
-            <asp:Label ID="TestDateLabel" runat="server"></asp:Label>
             <asp:Button ID="ApplyFilterButton" runat="server" Text="APPLY" OnClick="ApplyFilterButton_Click" />
         </asp:Panel>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="NewsPostsXML" Height="249px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True">

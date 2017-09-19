@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class Hub : System.Web.UI.Page
 {
-    protected int presentDate = 20730214;
+    protected int presentDate = 20730216;
     protected int startDate;
     protected int endDate;
 
@@ -15,7 +15,6 @@ public partial class Hub : System.Web.UI.Page
     {
         TablePanel.Height = (Unit)1100;
         CurrentDateLiteral.Text = String.Format("{0:####-##-##}", presentDate);
-        TestDateLabel.Text = "Start Date: " + startDate + ", End Date: " + endDate;
     }
 
     protected void SaveSelectedDates()
@@ -25,7 +24,6 @@ public partial class Hub : System.Web.UI.Page
         startDate = Convert.ToInt32(StartDateHiddenField.Value);
 
         endDate = Convert.ToInt32(string.Concat(EndYearDropDown.SelectedValue + EndMonthDropDown.SelectedValue + EndDayDropDown.SelectedValue));
-        TestDateLabel.Text = "Start Date: " + startDate + ", End Date: " + endDate + ", LastAllowed: " + Math.Min(endDate, presentDate);
     }
 
     protected string[] ConvertNumberToDateStringArray(int num) {
@@ -70,7 +68,7 @@ public partial class Hub : System.Web.UI.Page
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        TablePanel.Height = (Unit)1000;
+        TablePanel.Height = (Unit)1100;
     }
 
     protected void ResetStartButton_Click(object sender, EventArgs e)
@@ -84,9 +82,9 @@ public partial class Hub : System.Web.UI.Page
 
     protected void ResetEndButton_Click(object sender, EventArgs e)
     {
-        EndYearDropDown.SelectedValue = "2073";
-        EndMonthDropDown.SelectedValue = "02";
-        EndDayDropDown.SelectedValue = "14";
+        EndYearDropDown.SelectedValue = presentDate.ToString().Substring(0, 4);
+        EndMonthDropDown.SelectedValue = presentDate.ToString().Substring(4, 2);
+        EndDayDropDown.SelectedValue = presentDate.ToString().Substring(6, 2);
         endDate = presentDate;
         ApplyXPathToGridView();
     }
