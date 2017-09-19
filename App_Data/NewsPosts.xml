@@ -5,6 +5,26 @@
 		Date="29991231"
 		Content="CONTENT" />
 	<NewsPost
+		Title="'Benefactor' Builds Up Our Hopes"
+		Date="20730301"
+		Content="Last week, CLN officially completed and announced the first round of public safehouses in Project Benefactor. A total of 8 locations across the city are available to any member of the public with a SIN of any kind, even those associated with rival corps. They also rolled out a comm app designed to direct you to the nearest available location, available free on the Emerald City Grid. This news comes as a welcome change of pace, as life in the city has been growing increasingly grim. Even the most skeptical among us say to CLN: Thank you." />
+	<NewsPost
+		Title="Move Over, Danger Noodles - A New Public Distraction is Here!"
+		Date="20730226"
+		Content="Signal noise in the matrix has been on the rise globally over the past couple of days. While many fear it may be a sign of a Crash 3.0, most experts agree that it is likely nothing quite so dramatic. Some reports indicate the static is pervasive, even down to the Foundation of the matrix itself, and if that's true then there's undoubtedly something strange brewing deep in the digital world." />
+	<NewsPost
+		Title="Rocket Lab Rising to Stratospheric Heights!"
+		Date="20730220"
+		Content="Wraith Global Research, a small propulsions lab on the outskirts of the greater Seattle area, have announced the launches of a new set of satellites. While they're still tight-lipped about the details, it appears the payload is a prototype designed by Shiawase, and is magical in nature. They are scheduled to launch next month from their location just outside the quarantine zone, so residents inside the zone may be able to get a glimpse as they rise to low earth orbit mid-march." />
+	<NewsPost
+		Title="Making Daylight By Nightlight"
+		Date="20730216"
+		Content="At approximately 3:14am this morning, a breathtaking explosion echoed across the quarantine zone. Not much is known about the origin of the explosion, other than it appears to have been caused by a large object colliding with the earth at extreme speeds. No known NEOs were anywhere close enough to have shifted course, and the object was not detected until just before it hit the atmosphere at 3.10am. Speculation abounds, and no concrete evidence has come forward yet. " />
+	<NewsPost
+		Title="CLN Displays Surprising Initiative"
+		Date="20730215"
+		Content="In a leaked memo from AA corp Cerberus Logistics Network, a massive public works effort dubbed 'Project Benefactor' has apparently begun rolling out in Seattle. The memo is a whopping 37 pages describing a series of safehouses across the city proper designed to house members of the public in need of protection from the encroaching BitterScale nagas. Several million nuyen has already been spent designing and procuring the hardware for such a venture. Each location is designed with automated defenses, as well as an alarm that contacts CLN HQ should it come under attack. The project also outlines the hiring of a dedicated set of HRT's to respond to these alarms in an effort to stem the growing tide of abductions." />
+	<NewsPost
 		Title="Did the CDC Just Cure BitterScale?"
 		Date="20730206"
 		Content="In an international conference earlier this week, BitterScale taskforce researcher James Harrow reported success in treating the disease in laboratory conditions. He is said to have exclaimed that BitterScale 'is easily treated with the compound [we've] developed here at the CDC'. The results he has published this week paint a hopeful light, making a viable cure seem all the more likely to come sooner rather than later. Those of us stuck in the quarantine look forward to his next publication!" />
