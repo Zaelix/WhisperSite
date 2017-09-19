@@ -10,16 +10,16 @@
         <asp:HiddenField ID="StartDateHiddenField" runat="server" Value="20700102" />
         <asp:Panel ID="SearchPanel" runat="server" Width="322px">
             <asp:Label ID="SearchLabel" runat="server" Text="Search: "></asp:Label>
-            <asp:TextBox ID="HubSearchBox" runat="server" OnTextChanged="HubSearchBox_TextChanged"></asp:TextBox>
+            <asp:TextBox ID="HubSearchBox" runat="server"></asp:TextBox>
             <asp:Panel ID="DatesPanel" runat="server" Height="50px" Width="362px" ViewStateMode="Enabled">
                 <asp:Label ID="StartDateLabel" runat="server" Text="Start Date: " Width="70px"></asp:Label>
-                <asp:DropDownList ID="StartYearDropDown" runat="server" OnSelectedIndexChanged="SaveSelectedDates" AppendDataBoundItems="True" AutoPostBack="True">
+                <asp:DropDownList ID="StartYearDropDown" runat="server">
                     <asp:ListItem Value="2070">2070</asp:ListItem>
                     <asp:ListItem Value="2071">2071</asp:ListItem>
                     <asp:ListItem Value="2072">2072</asp:ListItem>
                     <asp:ListItem Value="2073"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:DropDownList ID="StartMonthDropDown" runat="server" OnSelectedIndexChanged="SaveSelectedDates" AppendDataBoundItems="true" AutoPostBack="True">
+                <asp:DropDownList ID="StartMonthDropDown" runat="server">
                     <asp:ListItem Value="01">01 - January</asp:ListItem>
                     <asp:ListItem Value="02">02 - February</asp:ListItem>
                     <asp:ListItem Value="03">03 - March</asp:ListItem>
@@ -33,7 +33,7 @@
                     <asp:ListItem Value="11">11 - November</asp:ListItem>
                     <asp:ListItem Value="12">12 - December</asp:ListItem>
                 </asp:DropDownList>
-                <asp:DropDownList ID="StartDayDropDown" runat="server" OnSelectedIndexChanged="SaveSelectedDates" AppendDataBoundItems="True" AutoPostBack="True">
+                <asp:DropDownList ID="StartDayDropDown" runat="server">
                     <asp:ListItem Value="01"></asp:ListItem>
                     <asp:ListItem Value="02"></asp:ListItem>
                     <asp:ListItem Value="03"></asp:ListItem>
@@ -68,13 +68,13 @@
                 </asp:DropDownList>
                 <asp:Button ID="ResetStartButton" runat="server" Height="20px" OnClick="ResetStartButton_Click" Text="Reset" UseSubmitBehavior="False" />
                 <asp:Label ID="EndDateLabel" runat="server" Text="End Date: " Width="70px"></asp:Label>
-                <asp:DropDownList ID="EndYearDropDown" runat="server" OnSelectedIndexChanged="SaveSelectedDates">
+                <asp:DropDownList ID="EndYearDropDown" runat="server">
                     <asp:ListItem>2070</asp:ListItem>
                     <asp:ListItem>2071</asp:ListItem>
                     <asp:ListItem Value="2072">2072</asp:ListItem>
                     <asp:ListItem Value="2073"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:DropDownList ID="EndMonthDropDown" runat="server" OnSelectedIndexChanged="SaveSelectedDates" AutoPostBack="True">
+                <asp:DropDownList ID="EndMonthDropDown" runat="server">
                     <asp:ListItem Value="01">01 - January</asp:ListItem>
                     <asp:ListItem Value="02">02 - February</asp:ListItem>
                     <asp:ListItem Value="03">03 - March</asp:ListItem>
@@ -88,7 +88,7 @@
                     <asp:ListItem Value="11">11 - November</asp:ListItem>
                     <asp:ListItem Value="12">12 - December</asp:ListItem>
                 </asp:DropDownList>
-                <asp:DropDownList ID="EndDayDropDown" runat="server" OnSelectedIndexChanged="SaveSelectedDates">
+                <asp:DropDownList ID="EndDayDropDown" runat="server">
                     <asp:ListItem>01</asp:ListItem>
                     <asp:ListItem>02</asp:ListItem>
                     <asp:ListItem Value="03"></asp:ListItem>
@@ -121,9 +121,10 @@
                     <asp:ListItem Value="30"></asp:ListItem>
                     <asp:ListItem Value="31"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:Button ID="ResetEndButton" runat="server" Height="20px" OnClick="ResetEndButton_Click" Text="Reset" />
+                <asp:Button ID="ResetEndButton" runat="server" Height="20px" OnClick="ResetEndButton_Click" Text="Reset" UseSubmitBehavior="False" />
             </asp:Panel>
             <asp:Label ID="TestDateLabel" runat="server"></asp:Label>
+            <asp:Button ID="ApplyFilterButton" runat="server" Text="APPLY" OnClick="ApplyFilterButton_Click" />
         </asp:Panel>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="NewsPostsXML" Height="249px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True">
             <Columns>

@@ -13,31 +13,19 @@ public partial class Hub : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        TablePanel.Height = (Unit)1000;
+        TablePanel.Height = (Unit)1100;
         CurrentDateLiteral.Text = String.Format("{0:####-##-##}", presentDate);
-        //EndDateSanityCheck();
-        //LoadSelectedDates();
         TestDateLabel.Text = "Start Date: " + startDate + ", End Date: " + endDate;
     }
 
-    protected void EndDateSanityCheck() {
-        if (EndYearDropDown.SelectedValue == "2070" && EndMonthDropDown.SelectedValue == "01" && EndDayDropDown.SelectedValue == "01")
-        {
-            EndYearDropDown.SelectedValue = "2073";
-            EndMonthDropDown.SelectedValue = "02";
-            EndDayDropDown.SelectedValue = "14";
-            endDate = presentDate;
-        }
-    }
-
-    protected void SaveSelectedDates(object sender, EventArgs e)
+    protected void SaveSelectedDates()
     {
         
         StartDateHiddenField.Value = string.Concat(StartYearDropDown.SelectedValue + StartMonthDropDown.SelectedValue + StartDayDropDown.SelectedValue);
         startDate = Convert.ToInt32(StartDateHiddenField.Value);
 
         endDate = Convert.ToInt32(string.Concat(EndYearDropDown.SelectedValue + EndMonthDropDown.SelectedValue + EndDayDropDown.SelectedValue));
-        TestDateLabel.Text = "Start Date: " + startDate + ", End Date: " + endDate;
+        TestDateLabel.Text = "Start Date: " + startDate + ", End Date: " + endDate + ", LastAllowed: " + Math.Min(endDate, presentDate);
     }
 
     protected string[] ConvertNumberToDateStringArray(int num) {
@@ -60,18 +48,24 @@ public partial class Hub : System.Web.UI.Page
         }
     }
 
-    protected void HubSearchBox_TextChanged(object sender, EventArgs e)
-    {
+    protected void ApplyXPathToGridView() {
         string search = HubSearchBox.Text;
+        SaveSelectedDates();
+        int lastAllowedDate = Math.Min(endDate, presentDate);
+        int firstAllowedDate = Math.Max(startDate, 20700101);
+        if (lastAllowedDate == 0) {
+            lastAllowedDate = presentDate;
+        }
+
         if (search != string.Empty)
         {
-            NewsPostsXML.XPath = "NewsPosts/NewsPost[@Date<="+ presentDate + " and @*[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + search.ToLower() + "')]]";
+            NewsPostsXML.XPath = "NewsPosts/NewsPost[@Date>=" + firstAllowedDate + " and @Date<=" + lastAllowedDate + " and @*[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '" + search.ToLower() + "')]]";
         }
         else
         {
-            NewsPostsXML.XPath = "NewsPosts/NewsPost[@Date<=" + presentDate + "]";
+            NewsPostsXML.XPath = "NewsPosts/NewsPost[@Date>=" + firstAllowedDate + " and @Date<=" + lastAllowedDate + "]";
         }
-        TablePanel.Height = (Unit)1000;
+        TablePanel.Height = (Unit)1100;
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,6 +79,7 @@ public partial class Hub : System.Web.UI.Page
         StartMonthDropDown.SelectedValue = "01";
         StartDayDropDown.SelectedValue = "01";
         startDate = 20700101;
+        ApplyXPathToGridView();
     }
 
     protected void ResetEndButton_Click(object sender, EventArgs e)
@@ -93,5 +88,11 @@ public partial class Hub : System.Web.UI.Page
         EndMonthDropDown.SelectedValue = "02";
         EndDayDropDown.SelectedValue = "14";
         endDate = presentDate;
+        ApplyXPathToGridView();
+    }
+
+    protected void ApplyFilterButton_Click(object sender, EventArgs e)
+    {
+        ApplyXPathToGridView();
     }
 }
